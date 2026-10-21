@@ -1,0 +1,7 @@
+middleware is like a safety layer before the server
+the network request from client is checked by middleware first before reaching the server
+the middleware authenticates the user itself and only then provides required access to that user
+it checks based on the token
+
+why do we write middleware seperately,why not in routes?
+coz once we write middleware,we can use it for any authentication endpoint

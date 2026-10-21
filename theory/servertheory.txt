@@ -17,4 +17,9 @@ so,we introduce a middleware
 app.use(express.static(path.join(__dirname, '../public')))
 
 1.the ../public builds a path one directory above from wherever server.js lives
+2.the above line of code does the working of serving the fanta.css and style.css files from 
+the public directory to the client
+3.as we only send the html code to the server,if thers a link tag linking to css and other files in the html code,
+the client will send the network request for fetching those files
+
 

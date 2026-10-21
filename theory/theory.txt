@@ -1,0 +1,8 @@
+in package.json-
+in script: the --watch emulates the server,its same as nodemon
+
+in server.js,
+const PORT = process.env.PORT || 8000
+in the above line,8000 is backup port and
+process.env.PORT takes port from the .env file if theres any
+if theres not a PORT in env,then it will automatically take 8000

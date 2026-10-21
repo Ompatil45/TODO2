@@ -1,0 +1,4 @@
+a jwt token is a unique token assigned to each user
+it can expire after some time,so user has to login again after that time
+
+once we send jwt token to the client through res, the client stores the token in its localstorage

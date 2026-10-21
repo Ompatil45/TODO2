@@ -1,0 +1,14 @@
+from authRoutes.js we export router,
+the router contains all the endpoints req for authentication like login,register
+
+in server.js we import that authRoutes and write
+app.use('/auth',authRoutes)
+so whichever endpoint we get from authRoute we connect it with
+'/auth' route in server.js
+
+//password security and bcrypt
+to secure our password,bcrypt encrypts the password and then stores it in the database
+the problem with this is,when an user enters the password,we have to match it with that encrypted password in the database
+which is not possible as the one in the database is encrypted
+so what we do is,we encrypt the password entered by the user with the same algorithm that we used before
+so that,we can match both the encrypted password with the same algorithm and authenticate the user

@@ -6,6 +6,41 @@ POST http://localhost:8000/auth/register
 Content-Type: application/json
 
 {
-    "username": "",
-    "password": ""
+    "username": "ompatill@gmail.com",
+    "password": "12345678"
 }
+
+### POST LOGGED-IN USER
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+{
+    "username": "ompatill@gmail.com",
+    "password": "12345678"
+}
+
+### GET ALL TODOS
+GET http://localhost:8000/todos
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzg4Nzg4NjY3LCJleHAiOjE3ODg4NzUwNjd9.7xYm0wUyObHB-KHIKLdsJ2dedrLxGzLz1WMKdDFCMS0
+
+### ADD NEW TODO
+POST http://localhost:8000/todos
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzg4Nzg4NjY3LCJleHAiOjE3ODg4NzUwNjd9.7xYm0wUyObHB-KHIKLdsJ2dedrLxGzLz1WMKdDFCMS0
+Content-Type: application/json
+
+{
+    "task": "This is a new todo"
+}
+
+### UPDATE TODO PUT TODOS/2
+PUT http://localhost:8000/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzg4Nzg4NjY3LCJleHAiOjE3ODg4NzUwNjd9.7xYm0wUyObHB-KHIKLdsJ2dedrLxGzLz1WMKdDFCMS0
+Content-Type: application/json
+
+{
+    "completed" : 1
+}
+
+### DELETE TODO DELETE TODOS/2
+DELETE http://localhost:8000/todos/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzg4Nzg4NjY3LCJleHAiOjE3ODg4NzUwNjd9.7xYm0wUyObHB-KHIKLdsJ2dedrLxGzLz1WMKdDFCMS0

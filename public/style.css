@@ -8,7 +8,7 @@ body {
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
-    padding: 1rem;
+    padding: clamp(1rem, 4vw, 2rem);
     min-height: 100vh;
 }
 
@@ -28,6 +28,16 @@ body,
     width: 100%;
 }
 
+#auth>div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+#auth>button {
+    align-self: flex-start;
+}
+
 .sign-up-text {
     padding-top: 0;
 }
@@ -35,6 +45,7 @@ body,
 .register-content {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -43,7 +54,14 @@ h1 {
 }
 
 .tab-container {
+    display: flex;
+    align-items: flex-end;
     overflow-x: auto;
+}
+
+.tab-container hr {
+    flex: 1 0 1rem;
+    min-width: 1rem;
 }
 
 .tab-button {
@@ -135,6 +153,9 @@ hr {
 
 
 .todo-item p {
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: anywhere;
     font-weight: 500;
 }
 
@@ -147,7 +168,13 @@ hr {
 .input-container input {
     width: 100%;
     flex: 1;
+    min-width: 0;
     max-width: unset !important;
+}
+
+.input-container button,
+.todo-buttons button {
+    flex-shrink: 0;
 }
 
 @keyframes widen {

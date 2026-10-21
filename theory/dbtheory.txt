@@ -1,0 +1,24 @@
+db.exec(`
+    CREATE TABLE user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE,
+    password TEXT
+    
+    )`)
+
+db.exec(`
+    CREATE TABLE todo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    task TEXT,
+    completed BOOLEAN DEFAULT 0,  default 0 means initially false
+    FOREIGN KEY (user_id) REFERENCES user(id)
+    )`)
+
+export default db
+
+we created 2 seperate tables for users and todo tasks for specific users
+the id is going to be used in other table,so we set it as a primary key
+the autoincrement increments the id 
+
+in the other table as we used key from another table,,we specify it as a foreign key
